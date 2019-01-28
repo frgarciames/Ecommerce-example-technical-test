@@ -1,0 +1,52 @@
+# import Product from "./entities/product.graphql"
+# import Cart from "./entities/cart.graphql"
+
+type Query{
+  getProducts(
+    from: String
+  ): [Product!]
+  allClients: [Client!]
+  getClient(id: ID!): Client
+  getCartById(id: ID!): Cart
+  getCarts: [Cart!]
+}
+
+type Mutation{
+  createCart(
+    input: CartInput
+  ): Cart
+  deleteCart(
+    id: ID!
+  ): DeleteElement
+  signIn(
+    email: String!
+    age: Int!
+    password: String!
+  ): Client
+  logIn(
+    email: String!
+    password: String!
+  ): String
+  deleteClient(id: ID!): ID
+  editClient(
+    age: Int
+    email: String
+  ) : Client
+}
+
+input CartInput {
+  products: [ProductInput!]
+}
+
+input ProductInput {
+  id: String!
+  name: String!
+  price: Float!
+  amount: Int!
+  image: String
+}
+
+type DeleteElement {
+  id: ID!
+  response: String!
+}

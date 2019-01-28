@@ -1,0 +1,182 @@
+[
+  {
+    "id": "f7a138ba-b659-4633-aa47-85e1a4b7c9a0",
+    "name": "Practical Rubber Shoes",
+    "price": 877.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "0a589bde-677c-4a1c-937e-ed0b9cbb1e37",
+    "name": "Generic Soft Chips",
+    "price": 390.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "9665b7ca-700a-4a0a-a48b-dec86f80a962",
+    "name": "Rustic Concrete Gloves",
+    "price": 189.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "ed74b63b-7a41-40ad-b4c7-459004b7d3b2",
+    "name": "Practical Soft Chair",
+    "price": 430.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "0ae172a9-061a-4374-9c07-a13f0e808f08",
+    "name": "Awesome Plastic Car",
+    "price": 566.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "266a7897-a955-4ded-9e50-c0e637906572",
+    "name": "Tasty Wooden Gloves",
+    "price": 177.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "81e4f415-c15a-4d11-9921-83a175503862",
+    "name": "Intelligent Plastic Shirt",
+    "price": 664.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "20cfbbc6-33c9-4873-aad7-270b431e8c71",
+    "name": "Intelligent Plastic Ball",
+    "price": 334.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "1e5735bf-900e-4be8-8012-b2b8f5f2df46",
+    "name": "Intelligent Fresh Sausages",
+    "price": 848.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "2c762ce5-2a30-4715-9ad4-53795471e258",
+    "name": "Fantastic Steel Table",
+    "price": 952.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "6013c483-72f2-4965-ab3a-bef1037b4af2",
+    "name": "Rustic Concrete Shirt",
+    "price": 556.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "cf21d39d-6d46-4cf9-b85d-9a7f00df28ee",
+    "name": "Practical Fresh Cheese",
+    "price": 417.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "74f24f01-77fd-4554-bb74-0667bffb989d",
+    "name": "Sleek Rubber Keyboard",
+    "price": 689.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "6daa66f2-77e6-404e-a84d-944cd4173978",
+    "name": "Fantastic Granite Towels",
+    "price": 427.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "a23bf487-62c8-4e09-9245-9e116d667264",
+    "name": "Generic Cotton Pants",
+    "price": 39.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "9cb67faf-02b2-44c0-837b-5acda26d1650",
+    "name": "Sleek Granite Mouse",
+    "price": 487.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "606eb2fa-81ae-4dc4-938b-d464f188b612",
+    "name": "Gorgeous Steel Towels",
+    "price": 428.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "cbab0070-9fb7-40bc-98ab-b515dde2b464",
+    "name": "Ergonomic Concrete Hat",
+    "price": 958.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "c9aa3da6-d30d-45c5-99c6-3099415abd18",
+    "name": "Ergonomic Concrete Computer",
+    "price": 918.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "00278b78-2adf-4a3c-b15f-31e6c76e4dc9",
+    "name": "Gorgeous Fresh Gloves",
+    "price": 889.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "b7d28b45-9368-4cc3-9da6-1779ee73fdb1",
+    "name": "Awesome Concrete Chips",
+    "price": 540.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "e6e57336-24cf-47a9-9999-53ba60aab599",
+    "name": "Small Rubber Chicken",
+    "price": 869.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "73e6d514-4469-4f9e-8cdb-1b49431b388d",
+    "name": "Tasty Cotton Car",
+    "price": 457.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "fefb1235-540e-4738-b042-5c2917308921",
+    "name": "Incredible Concrete Fish",
+    "price": 764.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "829d6195-3112-4218-b299-3f07354f66cc", 
+    "name": "Gorgeous Concrete Chicken",
+    "price": 99.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "28029cfd-1fb0-42a1-a879-169447f51708",
+    "name": "Licensed Steel Towels",
+    "price": 691.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "ca848d53-8f11-4022-92c6-525d2d3a3c69",
+    "name": "Incredible Rubber Ball",
+    "price": 409.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "cd8bfc25-bc49-4ae4-97cb-5bded746b2eb",
+    "name": "Unbranded Soft Chicken",
+    "price": 146.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "b40b53d2-9081-4328-9191-07a7e77fa588",
+    "name": "Unbranded Metal Chips",
+    "price": 757.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "502affb1-c28a-441a-b9aa-59d394a4abfd",
+    "name": "Awesome Granite Keyboard",
+    "price": 485.00,
+    "image": "https://via.placeholder.com/150"
+  }
+]

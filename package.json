@@ -1,0 +1,39 @@
+{
+  "name": "graphql-commerce-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.ts",
+  "scripts": {
+    "lint": "./node_modules/.bin/tslint -p tslint.json",
+    "db:migrate": "knex migrate:latest --knexfile=src/database/knexfile.js",
+    "db:seed": "knex seed:run --knexfile=src/database/knexfile.js",
+    "start:dev": "nodemon --watch src --ignore 'src/**/*.spec.ts' --exec ts-node src/server.ts -e ts",
+    "start:prod": "./node_modules/.bin/ts-node src/server.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.3.1",
+    "axios": "^0.18.0",
+    "bcrypt": "^3.0.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "graphql": "^14.1.1",
+    "graphql-import": "^0.7.1",
+    "graphql-tools": "^4.0.3",
+    "jsonwebtoken": "^8.4.0",
+    "knex": "^0.16.3",
+    "node-cache": "^4.2.0",
+    "objection": "^1.5.0",
+    "pg": "^7.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "ts-node": "^8.0.1",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4"
+  },
+  "private": true
+}

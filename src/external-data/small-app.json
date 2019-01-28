@@ -1,0 +1,242 @@
+[
+  {
+    "id": "2b8ab62d-f623-4b7c-9c9a-d58eb9b312e7",
+    "name": "Refined Cotton Mouse",
+    "price": 652.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "eecbd159-79df-4e4a-b321-d7fe6258c364",
+    "name": "Intelligent Cotton Soap",
+    "price": 770.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "9f8e3c81-26ef-431d-93ed-f2dc8380b02d",
+    "name": "Practical Soft Chicken",
+    "price": 308.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "a4ff16ff-d5e1-4ac2-80dd-45d666d29f11",
+    "name": "Licensed Fresh Shirt",
+    "price": 637.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "894eb863-698d-4b55-95a3-51ab99be72b3",
+    "name": "Unbranded Plastic Pizza",
+    "price": 291.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "b940c54d-b4bd-4695-a96c-2218782eebdb",
+    "name": "Handcrafted Rubber Bike",
+    "price": 351.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "f8324575-c225-44af-9a37-b3b21d9f0fc5",
+    "name": "Handmade Plastic Chips",
+    "price": 830.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "d5cc8470-c5e6-45eb-94f1-9747fd6a68e4",
+    "name": "Licensed Metal Shirt",
+    "price": 675.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "50f15d30-f00d-4d16-b5fe-dc1f08672cf7",
+    "name": "Handmade Rubber Gloves",
+    "price": 439.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "e8d472e1-b7ff-43da-9fe0-ae2b6a3ca245",
+    "name": "Ergonomic Fresh Gloves",
+    "price": 594.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "c059a38a-3e46-41d8-afd9-1806336b99b0",
+    "name": "Intelligent Granite Table",
+    "price": 580.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "e23b67a7-bd61-49e4-87c1-556e2e66001e",
+    "name": "Handcrafted Rubber Bacon",
+    "price": 576.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "b6a3db23-7dbd-40a0-8651-0756d188f5b1",
+    "name": "Handcrafted Steel Table",
+    "price": 892.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "0846c916-f24f-4d08-9fb4-6aab599b3a85",
+    "name": "Rustic Concrete Tuna",
+    "price": 292.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "ae3efd94-a08e-4f9a-9863-9dae0fc831c1",
+    "name": "Incredible Rubber Pizza",
+    "price": 141.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "dfefd74d-c6be-4591-ad50-58750b09a0d2",
+    "name": "Handmade Metal Bacon",
+    "price": 586.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "78b473d3-3b14-4045-b0b3-1bdf089fd45d",
+    "name": "Unbranded Frozen Tuna",
+    "price": 54.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "256b2e87-2716-4785-8229-d4dc1f0609cd",
+    "name": "Handcrafted Soft Hat",
+    "price": 128.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "ccdaf48b-9ee2-4662-849d-a4313bb1dc0e",
+    "name": "Handcrafted Rubber Cheese",
+    "price": 664.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "06f57350-e558-43d3-928c-a468dd423f83",
+    "name": "Practical Soft Bacon",
+    "price": 532.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "b51ce99b-e3ff-4ced-994c-ccbe1c6c4c54",
+    "name": "Awesome Cotton Shoes",
+    "price": 960.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "6fe7ab69-7da7-403a-8802-4a53cff69451",
+    "name": "Fantastic Granite Shoes",
+    "price": 265.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "691e120e-b2a5-4650-97be-ddbf76c2107c",
+    "name": "Awesome Concrete Car",
+    "price": 679.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "68e71b26-ca0e-45a9-ae6e-2d02bbc7e597",
+    "name": "Intelligent Frozen Pizza",
+    "price": 965.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "296e480a-4cbe-4207-834d-3cac79bb1667",
+    "name": "Ergonomic Frozen Shoes",
+    "price": 477.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "90ac88ba-3347-4ab5-8959-5ec2af23751d",
+    "name": "Small Fresh Chicken",
+    "price": 437.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "b2555797-5c52-432b-a1dd-ef63fed61c26",
+    "name": "Handmade Wooden Car",
+    "price": 748.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "f7a394f5-9e76-4c24-9928-fccb22aa0ecd",
+    "name": "Handcrafted Granite Hat",
+    "price": 458.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "086560e8-95d3-484c-944f-91bad235f124",
+    "name": "Awesome Cotton Pizza",
+    "price": 726.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "9aab321d-6e3d-4170-9d16-e5401b2a1632",
+    "name": "Sleek Soft Pizza",
+    "price": 672.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "48d47d17-79e4-4732-b345-51bc7a2a794d",
+    "name": "Licensed Cotton Shirt",
+    "price": 562.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "19f37c40-d162-49c8-8ada-3fa8605dcf30",
+    "name": "Handcrafted Fresh Computer",
+    "price": 774.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "ace4d378-e246-4e38-b4cd-48c403ac3f3c",
+    "name": "Small Cotton Computer",
+    "price": 13.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "6b53906c-f356-4ca5-a5c5-ddd615f06937",
+    "name": "Practical Soft Car",
+    "price": 153.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "eb46d80d-db59-4ad7-8c77-02fc1e93fa98",
+    "name": "Refined Wooden Hat",
+    "price": 500.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "c0867622-3370-4dc9-a72e-3e8d6296e73d",
+    "name": "Practical Concrete Fish",
+    "price": 112.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "84f5a4f3-4697-4e44-b6ee-32b310a0858f",
+    "name": "Unbranded Cotton Car",
+    "price": 844.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "65856806-b215-4dd2-935f-886e5a9f4f89",
+    "name": "Generic Wooden Tuna",
+    "price": 103.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "a8051de5-7af3-4946-b6eb-252ba6590e6b",
+    "name": "Licensed Cotton Computer",
+    "price": 353.00,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "2be46f07-eb93-4dfd-88a3-c973bc390636",
+    "name": "Handmade Metal Ball",
+    "price": 497.00,
+    "image": "https://via.placeholder.com/150"
+  }
+]
