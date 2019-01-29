@@ -5,33 +5,46 @@ type Query{
   getProducts(
     from: String
   ): [Product!]
-  allClients: [Client!]
+  getProductById(
+    id: ID!
+  ): Product
   getClient(id: ID!): Client
   getCartById(id: ID!): Cart
-  getCarts: [Cart!]
+  getLoggedUser: Client
 }
 
 type Mutation{
   createCart(
     input: CartInput
   ): Cart
+
   deleteCart(
     id: ID!
   ): DeleteElement
+
   signIn(
     email: String!
     age: Int!
     password: String!
   ): Client
+
   logIn(
     email: String!
     password: String!
   ): String
+
+  changePassword(
+    newPassword: String!
+    lastPassword: String!
+  ) : Client
+
   deleteClient(id: ID!): ID
+
   editClient(
     age: Int
     email: String
   ) : Client
+
 }
 
 input CartInput {

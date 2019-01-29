@@ -1,20 +1,5 @@
-import { Product } from '../../../models/product';
-import * as fs from 'fs';
-import * as path from 'path';
 import Cache from '../../../services/cache';
-
-const SMALLAPP = 'small-app';
-const DISHWASHERS = 'dishwashers';
-
-const ifDataNotInCache = (from) => {
-  const json = JSON.parse(
-    fs.readFileSync(
-      path.join(
-        __dirname + '../../../../external-data') + `/${from}.json`, 'utf8'
-    )
-  );
-  return Promise.resolve(json)
-}
+import { ifDataNotInCache, SMALLAPP, DISHWASHERS } from './utils';
 
 export const getProducts = async (_, params) => {
   const { from } = params;

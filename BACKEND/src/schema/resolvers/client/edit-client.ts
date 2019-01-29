@@ -11,10 +11,10 @@ export const editClient = async (_, params, { user }) => {
   }
 
   const client = await Client.query().findById(user.id).first();
-  const clientMerged: any = { ...client, ...{ age, email } }
+  const clientMerged: any = { ...client, age, email }
 
   try {
-    const clientUpdated: any = await Client.query().where('id', user.id).update({ ...clientMerged });
+    const clientUpdated: any = await Client.query().where('id', user.id).update(clientMerged);
     if (clientUpdated === 1) {
       return Client.query().findById(user.id)
     }
