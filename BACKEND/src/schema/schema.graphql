@@ -3,8 +3,10 @@
 
 type Query{
   getProducts(
-    from: String
-  ): [Product!]
+    limit: Int!
+    offset: Int!
+    orderBy: String
+  ): OutputProducts
   getProductById(
     id: ID!
   ): Product
@@ -62,4 +64,9 @@ input ProductInput {
 type DeleteElement {
   id: ID!
   response: String!
+}
+
+type OutputProducts {
+  products: [Product!],
+  hasNextPage: Boolean
 }
