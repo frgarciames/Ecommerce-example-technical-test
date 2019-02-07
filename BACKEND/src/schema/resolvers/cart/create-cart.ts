@@ -1,14 +1,15 @@
 import { Client } from './../../../models/client';
 import { Cart } from './../../../models/cart';
 import { Product } from '../../../models/product';
+import { handleUserNotAuth } from '../../../helpers/handle-error';
 
 export const createCart = async (_, params, { user }) => {
   if (!user) {
-    throw new Error('You are not authenticated!')
+    return handleUserNotAuth();
   }
   const { products } = params.input
   const total = products.reduce((acc, prod) => acc + (prod.price * prod.amount), 0)
-  const client: any = await Client.query().where('id', user.id).first();
+  const client: any = await Client.query().findById(user.id);
   const cart: any = await Cart.query<any>().insert({
     client_id: client.id,
     createdAt: new Date(),
@@ -22,6 +23,7 @@ export const createCart = async (_, params, { user }) => {
       name,
       amount,
       price,
+      owns: 'cart',
       image
     })
   })

@@ -1,7 +1,9 @@
 type Product{
   id: ID!
-  name: String!
-  price: Float!
-  amount: Int!
+  name: String
+  price: Float
+  amount: Int
+  externalId: String
   image: String
+  owns: String
 }

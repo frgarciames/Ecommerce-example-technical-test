@@ -1,0 +1,17 @@
+.cart-container {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.cart-footer {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  padding: 1em;
+  span {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: .5em;
+  }
+}

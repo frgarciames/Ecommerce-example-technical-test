@@ -1,0 +1,11 @@
+# import Client from "./client.graphql"
+# import Product from "./product.graphql"
+
+type WishList{
+  id: ID
+  name: String
+  client: Client
+  createdAt: String
+  priv: Boolean
+  products: [Product!]
+}

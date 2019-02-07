@@ -1,0 +1,41 @@
+.loading-container {
+  margin: 0 auto;
+  margin-top: 10em;
+  display: flex;
+  width: 10em;
+  justify-content: space-around;
+}
+
+.bounce-delay {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: #ccc;
+  border-radius: 50%;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  &.one::after{
+    animation: bounce 1.5s infinite;
+  }
+  &.two::after{
+    animation: bounce 1.5s infinite .5s;
+  }
+  &.three::after{
+    animation: bounce 1.5s infinite 1s;
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  } to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

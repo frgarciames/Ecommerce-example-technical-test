@@ -1,18 +1,23 @@
 # import Product from "./entities/product.graphql"
 # import Cart from "./entities/cart.graphql"
+# import WishList from "./entities/wishlist.graphql"
 
 type Query{
   getProducts(
     limit: Int!
     offset: Int!
     orderBy: String
+    search: String
+    from: String
   ): OutputProducts
   getProductById(
     id: ID!
   ): Product
   getClient(id: ID!): Client
   getCartById(id: ID!): Cart
+  getWishListById(id: ID!): WishList
   getLoggedUser: Client
+  getWishListsByUser: [WishList]
 }
 
 type Mutation{
@@ -20,7 +25,20 @@ type Mutation{
     input: CartInput
   ): Cart
 
+  deleteProductToWishList(
+    id: ID!
+  ): DeleteElement
+
   deleteCart(
+    id: ID!
+  ): DeleteElement
+
+  createWishList(
+    name: String!
+    priv: Boolean!
+  ): WishList
+
+  deleteWishList(
     id: ID!
   ): DeleteElement
 
@@ -47,6 +65,16 @@ type Mutation{
     email: String
   ) : Client
 
+  editWishList(
+    id: ID!
+    priv: Boolean
+    name: String
+  ) : WishList
+
+  addProductToWishList(
+    product: ProductInput!
+    idWishList: Int!
+  ) : Product
 }
 
 input CartInput {

@@ -1,9 +1,10 @@
 import { Cart } from '../../../models/cart';
 import { Product } from '../../../models/product';
+import { handleUserNotAuth } from '../../../helpers/handle-error';
 
 export const getCartById = async (_, params, { user }) => {
   if (!user) {
-    throw new Error('You are not authenticated!')
+    return handleUserNotAuth();
   }
 
   const { id } = params;

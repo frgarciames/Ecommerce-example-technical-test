@@ -1,6 +1,6 @@
 type Client{
-  id: ID!
-  email: String!
-  age: Int!
-  password: String!
+  id: ID
+  email: String
+  age: Int
+  password: String
 }

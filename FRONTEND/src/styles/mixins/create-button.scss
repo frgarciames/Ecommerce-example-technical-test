@@ -1,0 +1,26 @@
+@mixin create-button-with-icon ($color) {
+  height: 100%;
+  padding: .5em .8em;
+  border-radius: 30px;
+  font-size: .8em;
+  font-weight: bold;
+  transition: all .3s ease;
+  display: flex;
+  align-items: center;
+  background-color: $color;
+  border: 2px solid darken($color, 10%);
+  i {
+    margin: 2px;
+    color: #000;
+    transition: all .2s ease;
+  }
+  &:hover {
+    color: $color;
+    background-color: transparent;
+    border: 2px solid transparent;
+    i {
+      color: $color;
+      background-color: transparent;
+    }
+  }
+}

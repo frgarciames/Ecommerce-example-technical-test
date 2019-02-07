@@ -1,9 +1,10 @@
+import { handleUserNotAuth, handleError } from './../../../helpers/handle-error';
 import { Cart } from './../../../models/cart';
 import { Product } from '../../../models/product';
 
 export const deleteCart = async (_, params, { user }) => {
   if (!user) {
-    throw new Error('You are not authenticated!')
+    return handleUserNotAuth();
   }
 
   const { id } = params;
@@ -19,7 +20,9 @@ export const deleteCart = async (_, params, { user }) => {
         response: 'OK'
       }
     } catch (err) {
-      throw new Error(`Error trying to delete cart with id: ${id}`);
+      return handleError({
+        message: `Error trying to delete cart with id: ${id}`
+      })
     }
 
   }

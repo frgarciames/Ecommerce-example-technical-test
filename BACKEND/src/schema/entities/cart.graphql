@@ -2,8 +2,8 @@
 # import Product from "./product.graphql"
 
 type Cart{
-  id: ID!
-  client: Client!
+  id: ID
+  client: Client
   createdAt: String
   products: [Product!]
   total: Int

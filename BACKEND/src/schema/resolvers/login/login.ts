@@ -2,6 +2,7 @@ import * as bcrypt from 'bcrypt';
 import * as jsonwebtoken from 'jsonwebtoken';
 import { Client } from '../../../models/client';
 import { JWT_SECRET } from '../../../server';
+import { handleError } from '../../../helpers/handle-error';
 
 export const logIn = async (_, params) => {
   const { email, password } = params;
@@ -13,5 +14,7 @@ export const logIn = async (_, params) => {
       { expiresIn: '1d' }
     )
   }
-  throw new Error('Email or password are invalids');
+  return handleError({
+    message: `Error trying to login`
+  })
 }

@@ -18,6 +18,6 @@ export const withNProgress = TargetComponent =>
       NProgress.done();
     }
     render() {
-      return <TargetComponent />;
+      return <TargetComponent {...this.props}/>;
     }
   };
