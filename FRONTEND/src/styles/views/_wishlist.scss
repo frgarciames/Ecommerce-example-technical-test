@@ -1,0 +1,49 @@
+@import '../mixins/create-button.scss';
+
+.wishlist {
+  &__container {
+    width: 100%;
+    position: relative;
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 2em;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+  &__products-list {
+    display: flex;
+    justify-content: center;
+  }
+  &__product__item {
+    position: relative;
+    & > span  {
+      position: absolute;
+      top: 1.5em;
+      right: 1.5em;
+      cursor: pointer;
+      i {
+        font-weight: bold;
+        font-size: 2em;
+        color: #EA4335;
+      }
+    }
+  }
+  &__buttons {
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    width: 5em;
+    display: flex;
+    justify-content: space-around;
+    & span {
+      cursor: pointer;
+    }
+  }
+}

@@ -5,15 +5,11 @@ import { withContext } from '../utils/withContext';
 import '../styles/views/_cart.scss';
 
 class Cart extends Component {
-  constructor() {
-    super();
-  }
 
   render() {
     const { cart } = this.props.context.state;
     return (
       <Fragment>
-        {/* <input type="text" onChange={this.handleOnChange} /> */}
         <div className="cart-container">
           {
             cart && cart.map(prod => {

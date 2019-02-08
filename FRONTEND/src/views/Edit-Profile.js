@@ -1,8 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { withContext } from '../utils/withContext';
-import { Loading } from '../components/loader';
 import { graphqlRequestWithToken } from '../services/graphql.service.';
 import { getQueryEditProfile } from '../helpers/query-constructors';
+import '../styles/views/_edit-profile.scss';
+import { InputText } from '../components/input-text';
 
 class EditProfile extends Component {
 
@@ -15,7 +16,17 @@ class EditProfile extends Component {
 
   handleOnSubmit = async (e) => {
     e.preventDefault();
-    const inputs = Array.from(e.target.children).filter(el => el.nodeName !== "BUTTON");
+    const containers = e.target.children;
+    const inputs = [];
+    Array.from(containers).map(container => {
+      const input = Array.from(container.children).find(el => el.nodeName === "INPUT");
+      if (input) {
+        inputs.push({
+          name: input.name,
+          value: input.value
+        });
+      }
+    })
     const email = inputs.find(el => el.name === 'email').value;
     const age = inputs.find(el => el.name === 'age').value;
     const data = await graphqlRequestWithToken({
@@ -27,15 +38,36 @@ class EditProfile extends Component {
   render() {
     const { user } = this.props.context.state;
     return (
-      <Fragment>
+      <div className='edit-profile__container'>
         {user && (
-          <form onSubmit={this.handleOnSubmit}>
-            Email <input type='email' name='email' defaultValue={user.email} />
-            Age <input type='age' name='age' defaultValue={user.age} />
-            <button type='submit'> Save</button>
+          <form onSubmit={this.handleOnSubmit} className='edit-profile__form'>
+            <div className='edit-profile__info__item'>
+              <label htmlFor='email'>
+                Email
+              </label>
+              <InputText
+                name='email'
+                id='email'
+                defaultValue={user.email}
+              />
+            </div>
+            <div className='edit-profile__info__item'>
+              <label htmlFor='age'>
+                Age
+              </label>
+              <InputText
+                name='age'
+                id='age'
+                defaultValue={user.age}
+                type='number'
+              />
+            </div>
+            <div className='edit-profile__buttons'>
+              <button type='submit'> Save</button>
+            </div>
           </form>
         )}
-      </Fragment>
+      </div>
     )
   }
 }

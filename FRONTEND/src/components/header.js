@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom';
 import { withContext } from '../utils/withContext';
 import { deleteCookie } from '../helpers/cookie';
 
-const links = {
-  'Home': '/',
-  'My Wish Lists': '/wish-lists/',
-};
-
 const Header = (props) => {
   return (
     <header className='main-header'>

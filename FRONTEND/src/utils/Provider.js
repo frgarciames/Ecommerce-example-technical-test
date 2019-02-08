@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Context } from './withContext';
 import { getQueryLoggedUser } from '../helpers/query-constructors';
-import { graphqlRequestWithNoToken, graphqlRequestWithToken } from '../services/graphql.service.';
+import { graphqlRequestWithToken } from '../services/graphql.service.';
 import { getCookie } from '../helpers/cookie';
 
 class AppProvider extends Component {
@@ -29,7 +29,7 @@ class AppProvider extends Component {
       })
     }
   }
-  
+
   setUserInApp = async () => {
     const token = getCookie('token');
     if (token) {

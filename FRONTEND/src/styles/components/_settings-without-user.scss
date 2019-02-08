@@ -1,0 +1,48 @@
+@import '../mixins/create-button.scss';
+
+.without-user {
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+  }
+  &__form {
+    width: 70%;
+    max-width: 30em;
+    box-shadow: 0 0 10px grey;
+    padding: 2em;
+    border-radius: 20px;
+  }
+  &__info__item:last-of-type {
+    margin-top: 2em;
+  }
+  &__bold {
+    font-weight: bold;
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2em;
+    button {
+      justify-content: center;
+      color: white;
+      text-align: center;
+      width: 15em;
+       @include create-button-with-icon(#34A853);
+    }
+  }
+  &__signin {
+    margin-top: 1em;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    width: 10em;
+    @include create-button-with-icon(#000);
+  }
+  &__question {
+    margin-top: 1em;
+  }
+}

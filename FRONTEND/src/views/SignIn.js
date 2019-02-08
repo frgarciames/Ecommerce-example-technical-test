@@ -1,8 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { withContext } from '../utils/withContext';
-import { deleteCookie } from '../helpers/cookie';
 import { graphqlRequestWithNoToken } from '../services/graphql.service.';
-import { getQueryLogin, getQuerySignin } from '../helpers/query-constructors';
+import { getQuerySignin } from '../helpers/query-constructors';
+import '../styles/views/_signin.scss';
+import { InputText } from '../components/input-text';
 
 class SignIn extends Component {
 
@@ -26,7 +27,7 @@ class SignIn extends Component {
     const data = await graphqlRequestWithNoToken({
       query: getQuerySignin({ email, password, age })
     });
-    console.log(data)
+    this.props.history.push('/settings')
   }
 
   handleChange = (e) => {
@@ -38,19 +39,56 @@ class SignIn extends Component {
 
   render() {
     return (
-      <Fragment>
-        <Fragment>
-          <form onSubmit={this.handleOnSignIn}>
-            Email <input type='email' name='email' onChange={this.handleChange} />
-            Pwd <input type='password' name='password' onChange={this.handleChange} />
-            Repeat pwd <input type='password' name='rpPassword' onChange={this.handleChange} />
-            Age <input type='number' name='age' onChange={this.handleChange} />
-            <button type='submit'>
-              LogIn
-            </button>
-          </form>
-        </Fragment>
-      </Fragment>
+      <div className='signin__container'>
+        <form onSubmit={this.handleOnSignIn} className='signin__form' autoComplete='off'>
+          <div className='signin__info__item'>
+            <label htmlFor='email'>
+              <span className='signin__bold'>Email: </span>
+            </label>
+            <InputText
+              name='email'
+              id='email'
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className='signin__info__item'>
+            <label htmlFor='age'>
+              <span className='signin__bold'>Age: </span>
+            </label>
+            <InputText
+              name='age'
+              id='age'
+              type='number'
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className='signin__info__item'>
+            <label htmlFor='password'>
+              <span className='signin__bold'>Password: </span>
+            </label>
+            <InputText
+              name='password'
+              id='password'
+              type='password'
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className='signin__info__item'>
+            <label htmlFor='repeat-password'>
+              <span className='signin__bold'>Repeat password: </span>
+            </label>
+            <InputText
+              name='rpPassword'
+              id='repeat-password'
+              type='password'
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className='signin__buttons'>
+            <button type='submit'>Save</button>
+          </div>
+        </form>
+      </div>
     )
   }
 }

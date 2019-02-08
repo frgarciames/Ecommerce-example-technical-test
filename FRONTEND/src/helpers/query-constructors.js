@@ -123,7 +123,8 @@ export const getQueryGetWishListById = ({ id }) => (
       products {
         id,
         name,
-        price
+        price,
+        image
       }
     }
   }`

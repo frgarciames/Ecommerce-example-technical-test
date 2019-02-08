@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { withContext } from '../utils/withContext';
-import { deleteCookie } from '../helpers/cookie';
 import { graphqlRequestWithNoToken, graphqlRequestWithToken } from '../services/graphql.service.';
 import { getQueryLogin, getQueryChangePassword } from '../helpers/query-constructors';
+import { SettingsWithUser } from '../components/settings-with-user';
+import { SettingsWithoutUser } from '../components/settings-without-user';
+import '../styles/views/_settings.scss';
 
 class Settings extends Component {
 
@@ -26,6 +28,7 @@ class Settings extends Component {
     } else {
       document.cookie = `token=${data.logIn}`;
       this.props.context.setUserInApp();
+      this.props.history.push('/');
     }
   }
 
@@ -42,7 +45,18 @@ class Settings extends Component {
 
   handleOnChangePwd = async (e) => {
     e.preventDefault();
-    const inputs = Array.from(e.target.children).filter(el => el.nodeName !== "BUTTON");
+    e.preventDefault();
+    const containers = e.target.children;
+    const inputs = [];
+    Array.from(containers).map(container => {
+      const input = Array.from(container.children).find(el => el.nodeName === "INPUT");
+      if (input) {
+        inputs.push({
+          name: input.name,
+          value: input.value
+        });
+      }
+    })
     const oldPassword = inputs.find(el => el.name === 'old-password').value;
     const newPassword = inputs.find(el => el.name === 'new-password').value;
     const repeatNewPassword = inputs.find(el => el.name === 'repeat-new-password').value;
@@ -72,42 +86,27 @@ class Settings extends Component {
     return (
       <Fragment>
         {user ? (
-          <Fragment>
-            <p>Age: {user.age}</p>
-            <p>Email: {user.email}</p>
-            <p>Id: {user.id}</p>
-            <button onClick={() => this.handleOnRedirect('/edit-profile')}>Edit profile</button>
-            {!this.state.changingPassword && (
-              <button onClick={() => {
+          <div className='settings__with-user__container'>
+            <SettingsWithUser
+              user={user}
+              handleOnChangePwd={this.handleOnChangePwd}
+              changingPassword={this.state.changingPassword}
+              handleOnRedirect={this.handleOnRedirect}
+              setChangingPassword={() => {
                 this.setState({
                   changingPassword: true
                 })
-              }}>Change password</button>
-            )}
-            {this.state.changingPassword && (
-              <Fragment>
-                <form onSubmit={this.handleOnChangePwd}>
-                  Your password <input type='password' name='old-password' autoComplete="off" />
-                  New password <input type='password' name='new-password' autoComplete="off" />
-                  Repeat new password <input type='password' name='repeat-new-password' autoComplete="off" />
-                  <button type="submit">Change password</button>
-                </form>
-              </Fragment>
-            )}
-          </Fragment>
+              }}
+            />
+          </div>
         ) : (
-            <Fragment>
-              <form onSubmit={this.handleOnLogin}>
-                <input type='email' name='email' onChange={this.handleOnChange} />
-                <input type='password' name='password' onChange={this.handleOnChange} />
-                <button type='submit'>
-                  LogIn
-                </button>
-              </form>
-              <p>You don't have an account ?
-                <span onClick={() => this.handleOnRedirect('/signin')}>Sign in !</span>
-              </p>
-            </Fragment>
+            <div className='settings__without-user__container'>
+              <SettingsWithoutUser
+                handleOnLogin={this.handleOnLogin}
+                handleOnChange={this.handleOnChange}
+                handleOnRedirect={this.handleOnRedirect}
+              />
+            </div>
           )}
         <Fragment>
           {this.state.successChangePassword && (

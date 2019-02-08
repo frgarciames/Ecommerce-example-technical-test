@@ -1,0 +1,39 @@
+@import '../mixins/create-button.scss';
+
+.create-wishlist {
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    align-items: center;
+    input {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+  }
+  &__input-text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 20em;
+  }
+  &__input-checkbox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+  &__button {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 10em;
+    margin-bottom: 1em;
+    button {
+      justify-content: center;
+      color: white;
+      text-align: center;
+       @include create-button-with-icon(rgb(52, 168, 120));
+    }
+  }
+}

@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { withContext } from '../utils/withContext';
-import { Loading } from '../components/loader';
 import { graphqlRequestWithToken } from '../services/graphql.service.';
 import { getQueryEditWishList, getQueryGetWishListById } from '../helpers/query-constructors';
+import { InputText } from '../components/input-text';
+import { InputCheckbox } from '../components/input-checkbox';
+import '../styles/views/_edit-wishlist.scss';
 
 class EditWishList extends Component {
 
@@ -22,14 +24,23 @@ class EditWishList extends Component {
 
   handleOnSubmit = async (e) => {
     e.preventDefault();
-    const inputs = Array.from(e.target.children).filter(el => el.nodeName !== "BUTTON");
+    const containers = e.target.children;
+    const inputs = [];
+    Array.from(containers).map(container => {
+      const input = Array.from(container.children).find(el => el.nodeName === "INPUT");
+      if (input) {
+        inputs.push({
+          name: input.name,
+          value: input.type === 'checkbox' ? input.checked : input.value
+        });
+      }
+    })
     const name = inputs.find(el => el.name === 'name').value;
-    const priv = inputs.find(el => el.name === 'priv').checked;
-    console.log(priv)
+    const priv = inputs.find(el => el.name === 'priv').value;
     const data = await graphqlRequestWithToken({
       query: getQueryEditWishList({ name, priv, id: this.state.wishList.id })
     });
-    console.log(data)
+    this.props.history.push(`/wish-list/${this.state.wishList.id}`)
   }
 
   render() {
@@ -37,12 +48,30 @@ class EditWishList extends Component {
     return (
       <Fragment>
         {wishList && (
-          <form onSubmit={this.handleOnSubmit}>
-            <input type='text' name='name' id='name' defaultValue={wishList.name} />
-            <label htmlFor='name'>Name</label>
-            <input type='checkbox' name='priv' id='priv' defaultChecked={wishList.priv} />
-            <label className='label-checkbox' htmlFor='priv'>Private</label>
-            <button type='submit'> Save</button>
+          <form onSubmit={this.handleOnSubmit} className='edit-wishlist__form'>
+            <div className='edit-wishlist__input-text'>
+              <label htmlFor='name'>
+                Name
+              </label>
+              <InputText
+                name='name'
+                id='name'
+                defaultValue={wishList.name}
+              />
+            </div>
+            <div className='edit-wishlist__input-checkbox'>
+              <InputCheckbox
+                name='priv'
+                id='priv'
+                defaultChecked={wishList.priv}
+                labelText='Private'
+              />
+            </div>
+            <div className='edit-wishlist__button'>
+              <button type='submit'>
+                Save
+            </button>
+            </div>
           </form>
         )}
       </Fragment>

@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { withContext } from '../utils/withContext';
 import { graphqlRequestWithToken } from '../services/graphql.service.';
-import { getQueryGetWishListsByUser, getQueryGetWishListById, getQueryDeleteProductToWishList } from '../helpers/query-constructors';
+import { getQueryGetWishListById, getQueryDeleteProductToWishList } from '../helpers/query-constructors';
 import { Loading } from '../components/loader';
+import '../styles/views/_wishlist.scss';
+import ProductCard from '../components/product-card';
 
 class WishLists extends Component {
 
@@ -20,35 +22,69 @@ class WishLists extends Component {
     })
   }
 
+  copyUrlToClipboard = () => {
+    const tmpTextArea = document.createElement('textarea');
+    const url = document.location.href;
+    tmpTextArea.value = url
+    document.body.appendChild(tmpTextArea);
+    tmpTextArea.select();
+    document.execCommand('copy')
+    tmpTextArea.remove();
+    alert(`Url copied: ${url}`)
+  }
+
   render() {
     const { wishList } = this.state
     return (
-      <Fragment>
+      <div className='wishlist__container'>
         {wishList ? (
           <Fragment>
-            <p>Name: {wishList.name}</p>
-            <p>Products: </p>
-            {wishList.products.map(prod => (
-              <Fragment key={prod.id}>
-                <p>{prod.name}</p>
-                <p>{prod.price}</p>
-                <button onClick={async () => {
-                  const data = await graphqlRequestWithToken({
-                    query: getQueryDeleteProductToWishList({
-                      id: prod.id
-                    })
-                  });
-                  this.componentDidMount();
-                }}>Remove product</button>
-              </Fragment>
-            ))}
-            <button onClick={() => {
-              this.props.history.push(`/edit-wish-list/${wishList.id}`)
-            }}>Edit Wish List</button>
-            <button>Copy url for share</button>
+            <div className='wishlist__item'>
+              <p className='wishlist__title'>{wishList.name}</p>
+            </div>
+            <div className='wishlist__products-list'>
+              {wishList.products.map(prod => (
+                <div key={prod.id} className='wishlist__product__item'>
+                  <ProductCard
+                    product={prod}
+                    key={prod.id}
+                    mode='wishlist'
+                  />
+                  <span onClick={async () => {
+                    const data = await graphqlRequestWithToken({
+                      query: getQueryDeleteProductToWishList({
+                        id: prod.id
+                      })
+                    });
+                    this.componentDidMount();
+                  }}
+                    title='Remove product'
+                  >
+                    <i className="material-icons">
+                      remove_circle_outline
+                    </i>
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className='wishlist__buttons'>
+              <span onClick={() => {
+                this.props.history.push(`/edit-wish-list/${wishList.id}`)
+              }}
+                title='Edit Wishlist'>
+                <i className="material-icons">
+                  edit
+                </i>
+              </span>
+              <span title='Share Wishlist' onClick={this.copyUrlToClipboard}>
+                <i className="material-icons">
+                  share
+                </i>
+              </span>
+            </div>
           </Fragment>
         ) : <Loading />}
-      </Fragment>
+      </div>
     )
   }
 }

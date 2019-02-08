@@ -5,6 +5,7 @@ import { getQueryGetProducts, getQueryGetWishListsByUser, getQueryAddProductToWi
 import '../styles/views/_home.scss'
 import { withContext } from '../utils/withContext';
 import { Searcher } from '../components/searcher';
+import { ModalWishLists } from '../components/modal-wishlists';
 
 class Home extends Component {
   constructor() {
@@ -139,6 +140,42 @@ class Home extends Component {
     this.props.history.push(`/product/${id}`);
   }
 
+  handleClickWishList = (product) => {
+    document.body.style.overflow = 'hidden';
+    this.setState({
+      addingToWishList: {
+        state: true,
+        product
+      }
+    })
+  }
+
+  addToWishList = async (wl) => {
+    const data = await graphqlRequestWithToken({
+      query: getQueryAddProductToWishList({
+        product: this.state.addingToWishList.product,
+        idWishList: wl.id
+      })
+    });
+    document.body.style.overflow = 'auto';
+    this.setState({
+      addingToWishList: {
+        state: false,
+        product: null
+      }
+    })
+  }
+
+  hideModal = () => {
+    document.body.style.overflow = 'auto';
+    this.setState({
+      addingToWishList: {
+        state: false,
+        product: null
+      }
+    })
+  }
+
   render() {
     return (
       <Fragment>
@@ -163,70 +200,18 @@ class Home extends Component {
                   user={this.props.context.state.user}
                   onClickNavigation={() => this.handleOnClick(prod.id)}
                   addToCart={this.props.context.addProductToCart}
-                  addToWishList={(product) => {
-                    document.body.style.overflow = 'hidden';
-                    this.setState({
-                      addingToWishList: {
-                        state: true,
-                        product
-                      }
-                    })
-                  }}
+                  addToWishList={() => this.handleClickWishList(prod)}
                 />
               )
             })
           }
         </div>
         {this.state.addingToWishList.state && (
-          <div style={{
-            position: 'fixed',
-            width: '50vw',
-            height: '50vh',
-            backgroundColor: 'white',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            border: '1px solid grey'
-          }}>
-            <p>Wich Wish List do you want to add this product ?</p>
-            <form>
-              {this.state.wishLists && (
-                this.state.wishLists.map(wl => (
-                  <Fragment key={wl.id}>
-                    <p onClick={async () => {
-                      const data = await graphqlRequestWithToken({
-                        query: getQueryAddProductToWishList({
-                          product: this.state.addingToWishList.product,
-                          idWishList: wl.id
-                        })
-                      });
-                      document.body.style.overflow = 'auto';
-                      this.setState({
-                        addingToWishList: {
-                          state: false,
-                          product: null
-                        }
-                      })
-                    }}>
-                      <span>{wl.name}</span>
-                      <span>{wl.priv ? 'Private' : 'Public'}</span>
-                    </p>
-                  </Fragment>
-                ))
-              )}
-            </form>
-            <button onClick={() => {
-              document.body.style.overflow = 'auto';
-              this.setState({
-                addingToWishList: {
-                  state: false,
-                  product: null
-                }
-              })
-            }}>
-              Cancel
-          </button>
-          </div>
+          <ModalWishLists
+            data={this.state.wishLists}
+            addToWishList={this.addToWishList}
+            hide={this.hideModal}
+          />
         )}
       </Fragment>
     )

@@ -1,7 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { withContext } from '../utils/withContext';
 import { graphqlRequestWithToken } from '../services/graphql.service.';
 import { getQueryGetWishListsByUser } from '../helpers/query-constructors';
+import { WishListItem } from '../components/wishlist-item';
+import '../styles/views/_wishlists-list.scss';
 
 class WishListsList extends Component {
 
@@ -19,24 +21,37 @@ class WishListsList extends Component {
     })
   }
 
+
+  handleOnNavigation = (id) => {
+    this.props.history.push(`/wish-list/${id}`)
+  }
+
+  handleOnNavigationCreate = () => {
+    this.props.history.push('/create-wishlist');
+  }
+
   render() {
     return (
-      <Fragment>
-        <h3>Your Wish Lists</h3>
-        {this.state.wishLists.map(wl => (
-          <div key={wl.id} onClick={() => {
-            this.props.history.push(`/wish-list/${wl.id}`)
-          }}>
-            <p>Name: {wl.name}</p>
-            <p>{wl.priv ? 'Private' : 'Public'}</p>
-          </div>
-        ))}
-        <button onClick={() => {
-          this.props.history.push('/create-wishlist');
-        }}>
-          Create WishList
-        </button>
-      </Fragment>
+      <div className='wishlist-list__container'>
+        <span
+          className='wishlist-list__add-icon'
+          title='Create Wish List'
+          onClick={this.handleOnNavigationCreate}
+        >
+          <i className="material-icons">
+            add_circle_outline
+          </i>
+        </span>
+        <div className='wishlist-list__wrapper-items'>
+          {this.state.wishLists.map(wl => (
+            <WishListItem
+              key={wl.id}
+              handleOnClick={() => this.handleOnNavigation(wl.id)}
+              wishList={wl}
+            />
+          ))}
+        </div>
+      </div>
     )
   }
 }

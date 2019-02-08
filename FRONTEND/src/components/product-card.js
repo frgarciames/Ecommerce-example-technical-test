@@ -16,7 +16,7 @@ const ProductCard = ({
   mode
 }) => (
     <div className="product-card">
-      <img src={image} alt="Avatar" className="product-card__img" onClick={onClickNavigation} />
+      <img src={image} alt="Avatar" className="product-card__img" /*onClick={onClickNavigation}*/ />
       <div className="product-card__info">
         <h4>{name}</h4>
         <p>From: $ {price}</p>
@@ -26,12 +26,14 @@ const ProductCard = ({
           mode === 'cart' ? (
             <p>{`Amount: ${amount}`}</p>
           ) : (
-              <button className="product-card__buttons__button-card" onClick={() => addToCart(product)}>
-                Add to Cart
+              mode !== 'wishlist' ? (
+                <button className="product-card__buttons__button-card" onClick={() => addToCart(product)}>
+                  Add to Cart
                 <i className="material-icons">
-                  add_shopping_cart
+                    add_shopping_cart
                 </i>
-              </button>
+                </button>
+              ) : ''
             )
         }
         {
