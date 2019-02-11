@@ -1,2 +1,3 @@
-# commerce-example-graphql-react
-Ecommerce example with nodejs, graphql,  jwt auth, react...
+## Ecommerce example technical test
+
+### Read and follow the instructions in README.md inside BACKEND and FRONTEND.
