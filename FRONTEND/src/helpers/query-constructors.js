@@ -152,3 +152,12 @@ export const getQueryEditWishList = ({ id, name, priv }) => (
     }
   }`
 )
+
+export const getQueryDeleteWishList = ({ id }) => (
+  `mutation {
+    deleteWishList(id: ${id}) {
+      id,
+      response
+    }
+  }`
+)

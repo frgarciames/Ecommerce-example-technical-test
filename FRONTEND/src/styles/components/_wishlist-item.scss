@@ -1,5 +1,6 @@
 .wishlist-item {
   &__container {
+    position: relative;
     padding: 2em;
     cursor: pointer;
     box-shadow: 0px 0px 10px grey;

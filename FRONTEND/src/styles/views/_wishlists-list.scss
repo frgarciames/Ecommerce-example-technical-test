@@ -14,9 +14,23 @@
     }
   }
   &__wrapper-items {
+    margin-top: 2em;
+  }
+  &__wishlist-item {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 1em;
+  }
+  &__icon-remove {
+    position: relative;
+    bottom: 5em;
+    left: 9em;
+    cursor: pointer;
+    transition: all .2s ease;
+    color: red;
+    @media screen and (min-width: 600px) {
+      left: 15em;
+    }
   }
 }
